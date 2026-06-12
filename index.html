@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Skill Hub</title>
+<style>
+body{
+font-family:Arial;
+margin:0;
+background:#ebeced;
+}
+
+nav{
+background:#0d0d0d;
+padding:15px;
+text-align:center;
+}
+
+nav button{
+background:rgb(255, 255, 255);
+border:none;
+padding:10px 15px;
+margin:5px;
+cursor:pointer;
+border-radius:5px;
+}
+
+.page{
+display:none;
+padding:30px;
+}
+
+.active{
+display:block;
+}
+
+input{
+display:block;
+width:300px;
+padding:10px;
+margin:10px 0;
+}
+
+button.action{
+background:#2563eb;
+color:white;
+border:none;
+padding:10px 15px;
+cursor:pointer;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:10px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('signup')">Signup</button>
+<button onclick="showPage('login')">Login</button>
+<button onclick="showPage('dashboard')">Dashboard</button>
+<button onclick="showPage('profile')">Profile</button>
+<button onclick="showPage('settings')">Settings</button>
+</nav>
+
+<!-- Home -->
+<div id="home" class="page active">
+<h1>Student Skill Hub</h1>
+<p>Your Skills,Your Future.</p>
+
+<div class="card">
+<h3>Skills</h3>
+<p>Tech Stack and Core Soft Skills.</p>
+</div>
+
+<div class="card">
+<h3>Projects</h3>
+<p>Upload your projects.</p>
+</div>
+</div>
+
+<!-- Signup -->
+<div id="signup" class="page">
+<h2>Signup</h2>
+
+<input type="text" placeholder="Full Name">
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+
+<button class="action">Signup</button>
+</div>
+
+<!-- Login -->
+<div id="login" class="page">
+<h2>Login</h2>
+
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+
+<button class="action">Login</button>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard" class="page">
+<h2>Dashboard</h2>
+
+<div class="card">
+<h3>Total Skills</h3>
+<p>5</p>
+</div>
+
+<div class="card">
+<h3>Total Projects</h3>
+<p>3</p>
+</div>
+</div>
+
+<!-- Profile -->
+<div id="profile" class="page">
+<h2>Profile</h2>
+
+<p><b>Name:</b> JKD</p>
+<p><b>Department:</b> CSE</p>
+<p><b>Skills:</b> HTML, CSS, JavaScript</p>
+</div>
+
+<!-- Settings -->
+<div id="settings" class="page">
+<h2>Settings</h2>
+
+<button class="action" onclick="toggleDarkMode()">
+Dark Mode
+</button>
+</div>
+
+<script>
+function showPage(pageId){
+
+let pages=document.querySelectorAll('.page');
+
+pages.forEach(page=>{
+page.classList.remove('active');
+});
+
+document.getElementById(pageId).classList.add('active');
+}
+
+function toggleDarkMode(){
+document.body.classList.toggle('dark');
+
+if(document.body.classList.contains('dark')){
+document.body.style.background='black';
+document.body.style.color='white';
+}
+else{
+document.body.style.background='#f4f4f4';
+document.body.style.color='black';
+}
+}
+</script>
+
+</body>
+</html>
